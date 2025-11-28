@@ -1,0 +1,489 @@
+/* Paleta de Cores e Fontes */
+:root {
+    --amarelo-principal: #ff9900; /* Um pouco mais dourado/rico */
+    --preto-principal: #0c0c0c; /* Um preto mais suave, menos duro que 121212 */
+    --texto-claro: #FFFFFF;
+    --texto-escuro: #0a0a0a; /* Um cinza escuro para legibilidade em fundos claros */
+    --whatsapp-verde: #25D366;
+    --sombra-leve: rgba(0, 0, 0, 0.1);
+    --sombra-media: rgba(0, 0, 0, 0.2);
+    --sombra-forte: rgba(0, 0, 0, 0.3);
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Usando a fonte Poppins */
+    line-height: 1.6;
+    color: var(--texto-escuro);
+    background-color: #F8F8F8; /* Um fundo muito claro para evitar branco puro */
+}
+
+/* Layout Centralizado */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0; /* Mais espaçamento padrão para seções */
+}
+
+/* Estilos de Fundo */
+.amarelo-bg {
+    background-color: var(--amarelo-principal);
+    color: var(--texto-escuro);
+}
+
+.preto-bg {
+    background-color: var(--preto-principal);
+    color: var(--texto-claro);
+}
+
+/* Títulos */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2.5em, 6vw, 4.5em); /* Aumentado para mais impacto */
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--preto-principal);
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: clamp(2em, 4.5vw, 3.5em); 
+    text-align: center;
+    color: var(--amarelo-principal); 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 1.8em;
+    color: var(--amarelo-principal);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+/* --- Botões de Chamada para Ação (CTA) --- */
+
+/* Base para todos os botões */
+.btn {
+    display: inline-flex; /* Usar flex para alinhar texto e ícones se houver */
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 18px 40px; /* Mais preenchimento */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600; /* Medium bold */
+    border-radius: 10px; /* Mais arredondado */
+    transition: all 0.3s ease-in-out; /* Transição suave e uniforme */
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 15px var(--sombra-leve); /* Sombra inicial mais suave */
+}
+
+/* Botão Principal (Preto com texto Amarelo) */
+.btn-primary {
+    background-color: var(--preto-principal);
+    color: var(--amarelo-principal);
+    border: 2px solid var(--preto-principal);
+}
+
+.btn-primary:hover {
+    background-color: var(--amarelo-principal);
+    color: var(--preto-principal);
+    border-color: var(--preto-principal);
+    transform: translateY(-5px) scale(1.02); /* Mais destaque no hover */
+    box-shadow: 0 10px 20px var(--sombra-media);
+}
+
+/* Botão Secundário (Amarelo com texto Preto) */
+.btn-secondary {
+    background-color: var(--amarelo-principal);
+    color: var(--preto-principal);
+    border: 2px solid var(--amarelo-principal);
+}
+
+.btn-secondary:hover {
+    background-color: var(--preto-principal); /* Inverte as cores no hover */
+    color: var(--amarelo-principal);
+    border-color: var(--amarelo-principal);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px var(--sombra-media);
+}
+
+/* Estilo para botões no cabeçalho */
+.btn-header {
+    padding: 10px 25px; 
+    border-radius: 6px;
+    background-color: var(--amarelo-principal);
+    color: var(--preto-principal) !important; 
+    border: none; 
+    font-size: 0.9em;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-header:hover {
+    background-color: var(--texto-claro); /* Fundo branco no hover */
+    color: var(--preto-principal) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Centraliza o botão secundário na seção de serviços */
+.center-btn {
+    display: block;
+    margin: 50px auto 0;
+}
+
+/* --- ESTILO DO CABEÇALHO --- */
+#header {
+    background-color: var(--preto-principal);
+    padding: 0px 0; 
+    top: 0;
+    z-index: 100; /* Garante que fique acima de tudo */
+    box-shadow: 0 4px 10px var(--sombra-media);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0; /* O container já tem padding, não precisa aqui */
+}
+
+.logo-link {
+    display: flex; /* Para centralizar a imagem dentro do link se precisar */
+    align-items: center;
+}
+.logo {
+    height: 300px; /* Tamanho da logo maior */
+    transition: transform 0.3s ease;
+}
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.main-nav a {
+    color: var(--amarelo-principal);
+    text-decoration: none;
+    margin-left: 35px; /* Mais espaçamento */
+    font-weight: 600;
+    font-size: 1.05em;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.main-nav a:not(.btn):hover { /* Não aplica o hover em botões */
+    color: var(--texto-claro);
+    transform: translateY(-2px);
+}
+
+/* --- SEÇÃO HERO --- */
+#hero {
+    padding: 120px 0; /* Mais preenchimento para destaque */
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Garante que nada vaze */
+}
+
+#hero p {
+    font-size: 1.4em;
+    margin-top: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+}
+
+/* --- SEÇÃO DE SERVIÇOS (GRID) --- */
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Min-width um pouco maior */
+    gap: 40px; /* Mais espaçamento entre os itens */
+    margin-top: 60px;
+    text-align: center;
+}
+
+.servico-item {
+    background-color: var(--preto-principal);
+    padding: 40px 30px; /* Mais preenchimento */
+    border-radius: 12px; /* Mais arredondado */
+    border: 2px solid var(--amarelo-principal);
+    box-shadow: 0 8px 20px var(--sombra-media);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico-item:hover {
+    transform: translateY(-10px); /* Mais destaque no hover */
+    box-shadow: 0 15px 30px var(--sombra-forte);
+}
+
+.servico-item i {
+    font-size: 3.5em; /* Ícones maiores */
+    color: var(--amarelo-principal);
+    margin-bottom: 15px;
+}
+
+.servico-item p {
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.8); /* Texto um pouco mais suave */
+}
+
+
+/* --- SEÇÃO VANTAGENS (GRID) --- */
+#por-que {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.vantagens-grid {
+    display: flex;
+    justify-content: center; /* Centraliza no eixo principal */
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    gap: 40px; 
+    margin-top: 60px;
+}
+
+.vantagem-item {
+    flex-basis: 300px; /* Largura base para cada item */
+    max-width: 350px;
+    background-color: var(--texto-claro); /* Fundo branco para destaque */
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px var(--sombra-leve);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--preto-principal); /* Detalhe preto no topo */
+}
+
+.vantagem-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px var(--sombra-media);
+}
+
+.vantagem-item i {
+    font-size: 3em; 
+    color: var(--amarelo-principal); /* Cor do ícone */
+    margin-bottom: 15px;
+}
+
+.vantagem-item h4 {
+    font-size: 1.5em;
+    color: var(--preto-principal);
+}
+.vantagem-item p {
+    font-size: 1em;
+    color: var(--texto-escuro);
+}
+
+/* --- SEÇÃO DEPOIMENTOS --- */
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+    justify-content: center;
+}
+
+.depoimento-box {
+    background-color: #2A2A2A; /* Um cinza mais escuro */
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px var(--sombra-media);
+    border-left: 6px solid var(--amarelo-principal); /* Borda mais grossa */
+}
+
+.depoimento-box p {
+    font-style: italic;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+.depoimento-box footer {
+    font-weight: 600;
+    color: var(--amarelo-principal);
+    text-align: right;
+    font-size: 1em;
+}
+
+/* --- SEÇÃO CTA FINAL --- */
+.cta-final {
+    text-align: center;
+    padding: 100px 0;
+}
+.cta-final p {
+    max-width: 700px;
+    margin: 15px auto 40px;
+    font-size: 1.2em;
+}
+
+/* --- RODAPÉ --- */
+footer {
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.95em;
+    background-color: var(--preto-principal);
+    color: var(--texto-claro);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0; /* O container já tem padding */
+}
+
+.footer-link {
+    color: var(--amarelo-principal);
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.social-icons a {
+    color: var(--amarelo-principal);
+    font-size: 1.5em;
+    margin-left: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.social-icons a:hover {
+    color: var(--texto-claro);
+    transform: scale(1.2);
+}
+
+/* --- BOTÃO FLUTUANTE DE WHATSAPP --- */
+.whatsapp-float {
+    position: fixed;
+    width: 65px; /* Ligeiramente maior */
+    height: 65px;
+    bottom: 40px;
+    right: 40px;
+    background-color: var(--whatsapp-verde);
+    color: #FFF;
+    border-radius: 50%; /* Garante círculo perfeito */
+    text-align: center;
+    font-size: 32px; /* Ícone maior */
+    line-height: 65px;
+    z-index: 1000;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    
+    opacity: 0; 
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.3s ease-out;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.15); /* Mais destaque no hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* --- RESPONSIVIDADE GERAL --- */
+@media (max-width: 992px) {
+    .header-content {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+    .main-nav {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap; /* Permite quebrar links em várias linhas */
+        justify-content: center;
+    }
+    .main-nav a {
+        margin: 8px 15px; /* Espaçamento menor para links */
+        font-size: 1em;
+    }
+    .logo {
+        height: 60px;
+    }
+    
+    h1 {
+        font-size: clamp(2em, 5vw, 3.5em);
+    }
+    h2 {
+        font-size: clamp(1.8em, 4vw, 2.8em);
+    }
+
+    .servicos-grid, .depoimentos-grid, .vantagens-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas médias */
+        gap: 30px;
+    }
+    
+    .vantagem-item {
+        max-width: 400px;
+        margin: 0 auto; /* Centraliza item em coluna única */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .social-icons {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 60px 0; /* Menos padding em telas muito pequenas */
+    }
+    h1 {
+        font-size: clamp(1.8em, 7vw, 2.8em);
+    }
+    h2 {
+        font-size: clamp(1.5em, 6vw, 2.2em);
+    }
+    p {
+        font-size: 1em;
+    }
+    
+    .logo{
+     height: 300px;
+        
+    }
+
+    .btn {
+        padding: 15px 30px;
+        font-size: 0.9em;
+        width: 100%; /* Ocupa largura total */
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btn-header {
+        padding: 8px 15px;
+        font-size: 0.85em;
+    }
+    
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        line-height: 55px;
+        font-size: 28px;
+        bottom: 25px;
+        right: 25px;
+    }
+}
